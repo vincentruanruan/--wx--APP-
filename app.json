@@ -8,14 +8,5 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  },
-  "usingComponents": {
-    "i-button": "../../dist/iview/button/index",
-    "i-grid": "../../dist/iview/grid/index",
-    "i-grid-item": "../../dist/iview/grid-item/index",
-    "i-grid-icon": "../../dist/iview/grid-icon/index",
-    "i-grid-label": "../../dist/iview/grid-label/index",
-    "i-row": "../../dist/iview/row/index",
-    "i-col": "../../dist/iview/col/index"
   }
 }

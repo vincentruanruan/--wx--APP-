@@ -1,3 +1,37 @@
+.topBar {
+  height: 59px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.topBar.drop {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 5px;
+}
+
+.topBar image {
+  height: 43px;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  display: inline-block;
+}
+
+.topBar .otherBtn {
+  position: absolute;
+  color: #fff;
+  right: 10px;
+  top: 12px;
+}
+
+.topBar .otherBtn.drop {
+  color: #666;
+}
+
 swiper-item image {
   width: 100%;
 }
@@ -125,9 +159,26 @@ swiper-item image {
   color: #999;
 }
 
-.case .btnList{
+.case .btnList {
   margin-top: 10px;
   text-align: center;
+  padding: 15px;
+}
+
+.case .btnList text {
+  border: 1px solid #eaeaea;
+  color: #999;
+  margin: 5px 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.case .btnList text.action {
+  background: #108bec;
+  border: 1px #108bec solid;
+  color: #fff;
 }
 
 .case .list {
@@ -156,4 +207,87 @@ swiper-item image {
 .case .itemDesc {
   font-size: 14px;
   color: #999;
+}
+
+.news {
+  background: #f9f9f9;
+}
+
+.news .list {
+  margin: 50px 0;
+}
+
+.news .col-class {
+  padding: 0 10px;
+  margin-bottom: 25px;
+}
+
+.news .itemTitle, .news .itemDesc {
+  display: block;
+}
+
+.news .itemTitle {
+  font-size: 15px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.news .left {
+  text-align: right;
+}
+
+.news .left .month {
+  font-size: 17px;
+  display: inline-block;
+  color: #777;
+}
+
+.news .left .year {
+  font-size: 12px;
+  color: #999;
+}
+
+.news .itemDesc {
+  font-size: 14px;
+  color: #999;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.footer {
+  background: #363a43;
+  padding: 30px 15px;
+  text-align: center;
+  color: #9a9ca6;
+}
+
+.footer .footItem {
+  display: inline-block;
+  font-size: 10px;
+  margin: 0 3px;
+}
+
+.footer .footItem i-icon {
+  margin-right: 3px;
+  color: #9a9ca6;
+}
+
+.footer .qrcode {
+  width: 30%;
+  margin-top: 20px;
+}
+
+.footer .tip {
+  font-size: 12px;
+  margin-top: 5px;
 }

@@ -2,6 +2,11 @@
 <view class="container">
 
 
+  <view class='topBar {{drop}}'>
+    <image src='{{topBarLogo}}' mode='top left'></image> 
+    <i-icon class='otherBtn {{drop}}' type="other" size="35" />
+  </view>
+
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" bindchange="bindchange" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}" style="height:{{bannerHeight[current]}}rpx;">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
@@ -9,30 +14,6 @@
       </swiper-item>
     </block>
   </swiper>
-
-  <view class="case dpBox">
-    <text class='title'><text class='dot'></text>推荐案例</text>
-    <view class='btnList'>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮546</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮12321</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮23</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮312</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮43534</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮</i-button>
-      <i-button bind:click="" type="primary" size="small" inline="false" shape="circle" style="">按钮s54654</i-button>
-    </view>
-    <view class='list'>
-      <i-row>
-        <i-col span="12" i-class="col-class" wx:for="{{recommend}}" wx:key="{{index}}">
-          <image class='itemIcon' src="{{item.url}}" mode='widthFix' />
-          <text class='itemTitle'>{{item.title}}</text>
-        </i-col>
-      </i-row>
-    </view>
-  </view>
-
 
   <view class="server dpBox">
     <text class='title'><text class='dot'></text>我们的服务</text>
@@ -62,6 +43,57 @@
         </i-col>
       </i-row>
     </view>
+  </view>
+
+  <view class="case dpBox">
+    <text class='title'><text class='dot'></text>推荐案例</text>
+    <view class='btnList'>
+      <text class='action'>按钮</text>
+      <text>按钮546</text>
+      <text>按钮12321</text>
+      <text>按钮</text>
+      <text>按钮23</text>
+      <text>按钮312</text>
+      <text>按钮43534</text>
+      <text>按钮</text>
+      <text>按钮s54654</text>
+    </view>
+    <view class='list'>
+      <i-row>
+        <i-col span="12" i-class="col-class" wx:for="{{recommend}}" wx:key="{{index}}">
+          <image class='itemIcon' src="{{item.url}}" mode='widthFix' />
+          <text class='itemTitle'>{{item.title}}</text>
+        </i-col>
+      </i-row>
+    </view>
+  </view>
+
+  <view class="news dpBox">
+    <text class='title'><text class='dot'></text>企业资讯</text>
+    <view class='list'>
+      <i-row wx:for="{{news}}" wx:key="{{index}}">
+        <i-col span="5" i-class="col-class" class="left">
+          <text class='month'>{{item.month}}</text>
+          <text class='year'>{{item.year}}</text>
+        </i-col>
+        <i-col span="19" i-class="col-class">
+          <text class='itemTitle'>{{item.title}}</text>
+          <text class='itemDesc'>{{item.desc}}</text>
+        </i-col>
+      </i-row>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <view class='footItem'>
+      <i-icon type="customerservice" size="15" />Tel： 18520398487</view>
+    <view class='footItem'>
+      <i-icon type="mail" size="15" />E-mai：2965586977@qq.com</view>
+    <view class='footItem'>
+      <i-icon type="coordinates" size="15" />Add：广州市天河区长兴路5号第二栋308之107室</view>
+
+    <image src='{{qrcode}}' mode='widthFix' class='qrcode'></image>
+    <view class='tip'>扫一扫 关注我</view>
   </view>
 
 
