@@ -1,21 +1,159 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+swiper-item image {
+  width: 100%;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.dpBox {
+  position: relative;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.dpBox .title {
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 64px;
+  border-bottom: 1px #abe0ff solid;
+  margin: 0 auto;
+  position: relative;
 }
 
-.usermotto {
-  margin-top: 200px;
+.dpBox .title .dot {
+  width: 40px;
+  height: 3px;
+  background: #108bec;
+  line-height: 0;
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.server .list {
+  margin: 50px 0;
+}
+
+.server .col-class {
+  padding: 0 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.server .itemIcon {
+  width: 60%;
+}
+
+.server .itemTitle, .server .itemDesc {
+  display: block;
+  text-align: center;
+}
+
+.server .itemTitle {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.server .itemDesc {
+  font-size: 14px;
+  color: #999;
+}
+
+.dpBox.develop .title {
+  color: #fff;
+}
+
+.dpBox.develop .title .dot {
+  background: #fff;
+}
+
+.develop .top {
+  top: 0;
+  position: absolute;
+  background: #2596e9;
+  height: 300px;
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+
+.develop .list {
+  margin: 50px 0;
+  z-index: 1;
+}
+
+.develop .col-class {
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.develop .bg {
+  background: #fff;
+  position: relative;
+  padding: 50px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 10px;
+}
+
+.develop .bg .bgview {
+  width: 40px;
+  height: 3px;
+  background: #ffc600;
+  line-height: 0;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.develop .itemIcon {
+  width: 80px;
+}
+
+.develop .itemTitle, .develop .itemDesc {
+  display: block;
+  text-align: center;
+}
+
+.develop .itemTitle {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.develop .itemDesc {
+  font-size: 14px;
+  color: #999;
+}
+
+.case .btnList{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.case .list {
+  margin: 30px 0;
+  padding: 0 7.5px;
+}
+
+.case .col-class {
+  padding: 0 7.5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.case .itemIcon {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.case .itemTitle {
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.case .itemDesc {
+  font-size: 14px;
+  color: #999;
 }
