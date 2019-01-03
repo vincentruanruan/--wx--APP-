@@ -1,0 +1,14 @@
+<!--components/footerItem/index.wxml-->
+<view class='footer'>
+  <view class='footItem'>
+    <i-icon type="customerservice" size="15" />Tel： 18520398487</view>
+  <view class='footItem'>
+    <i-icon type="mail" size="15" />E-mai：2965586977@qq.com</view>
+  <view class='footItem'>
+    <i-icon type="coordinates" size="15" />Add：广州市天河区长兴路5号第二栋308之107室</view>
+
+  <view>
+    <image src='{{qrcode}}' mode='widthFix' class='qrcode'></image>
+  </view>
+  <view class='tip'>扫一扫 关注我</view>
+</view>

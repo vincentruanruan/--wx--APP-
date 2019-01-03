@@ -18,7 +18,7 @@ Page({
     indicatorActiveColor: '#ffffff',
     bannerHeight: [],
     current: 0,
-    qrcode: '/imgs/wxqrcode.jpg',
+    
     topBarLogo: '/imgs/logo-white.png',
     logo: '/imgs/logo.png',
     logoWhite: '/imgs/logo-white.png',
@@ -137,7 +137,7 @@ Page({
     })
   },
   onPageScroll: function(e) {
-    console.log(e); //{scrollTop:99}
+    // console.log(e); //{scrollTop:99}
     if (e.scrollTop > 20) {
       this.setData({
         topBarLogo: this.data.logo,

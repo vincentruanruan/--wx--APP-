@@ -7,6 +7,7 @@
     "i-grid-label": "../../dist/iview/grid-label/index",
     "i-row": "../../dist/iview/row/index",
     "i-col": "../../dist/iview/col/index",
-    "i-icon": "../../dist/iview/icon/index"
+    "i-icon": "../../dist/iview/icon/index",
+    "v-footer":"../../components/footerItem/index"
   }
 }
