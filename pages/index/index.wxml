@@ -3,11 +3,10 @@
 
 
 
+  <v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}"/>
 
-  <view class='topBar {{drop}}'>
-    <image src='{{topBarLogo}}' mode='top left'></image>
-    <i-icon class='otherBtn {{drop}}' type="other" size="35" />
-  </view>
+  
+  
 
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" bindchange="bindchange" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}" style="height:{{bannerHeight[current]}}rpx;">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
@@ -20,13 +19,13 @@
 
 
   <view class="server dpBox">
-    <text class='title'><text class='dot'></text>我们的服务</text>
+    <text class='title'><text class='dot'></text>{{serverTitle}}</text>
     <view class='list'>
       <i-row>
         <i-col span="12" i-class="col-class" wx:for="{{server}}" wx:key="{{index}}">
-          <image class='itemIcon' src="{{item.url}}" mode='widthFix' />
+          <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
           <text class='itemTitle'>{{item.title}}</text>
-          <text class='itemDesc'>{{item.desc}}</text>
+          <text class='itemDesc'>{{item.miaoshu}}</text>
         </i-col>
       </i-row>
     </view>
@@ -34,14 +33,14 @@
 
   <view class="develop dpBox">
     <view class='top'></view>
-    <text class='title'><text class='dot'></text>我们的服务</text>
+    <text class='title'><text class='dot'></text>{{developTitle}}</text>
     <view class='list'>
       <i-row>
         <i-col span="24" i-class="col-class" wx:for="{{develop}}" wx:key="{{index}}">
           <view class='bg'>
-            <image class='itemIcon' src="{{item.url}}" mode='widthFix' />
+            <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
             <text class='itemTitle'>{{item.title}}</text>
-            <text class='itemDesc'>{{item.desc}}</text>
+            <text class='itemDesc'>{{item.miaoshu}}</text>
             <text class='bgview'></text>
           </view>
         </i-col>
@@ -50,7 +49,7 @@
   </view>
 
   <view class="case dpBox">
-    <text class='title'><text class='dot'></text>推荐案例</text>
+    <text class='title'><text class='dot'></text>{{recommendTitle}}</text>
     <view class='btnList'>
       <text class='action'>按钮</text>
       <text>按钮546</text>
@@ -73,20 +72,23 @@
   </view>
 
   <view class="news dpBox">
-    <text class='title'><text class='dot'></text>企业资讯</text>
+    <text class='title'><text class='dot'></text>{{newsTitle}}</text>
     <view class='list'>
-      <i-row wx:for="{{news}}" wx:key="{{index}}">
+      <i-row wx:for="{{news}}" wx:key="{{index}}" data-id="{{item.id}}">
         <i-col span="5" i-class="col-class" class="left">
           <text class='month'>{{item.month}}</text>
           <text class='year'>{{item.year}}</text>
         </i-col>
         <i-col span="19" i-class="col-class">
           <text class='itemTitle'>{{item.title}}</text>
-          <text class='itemDesc'>{{item.desc}}</text>
+          <text class='itemDesc'>{{item.abstract}}</text>
         </i-col>
       </i-row>
     </view>
   </view>
+
+
+
 
 
   <v-footer />

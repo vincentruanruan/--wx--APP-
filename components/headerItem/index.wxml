@@ -1,0 +1,13 @@
+<!--components/headerItem/index.wxml-->
+
+
+<view class='topBar {{drop}}'>
+  <image src='{{logo}}' mode='top left'></image>
+  <i-icon class='otherBtn {{drop}}' type="other" size="35" bindtap='toggleRightMenu' />
+</view>
+
+<i-drawer i-class="rightMenuShadow" mode="right" visible="{{showRight}}" bind:close="toggleRightMenu">
+  <view class="menu-container" style='height:{{winHeight}}px;'>
+    <view class='menuItem' wx:for="{{rightMenu}}" wx:key="{{index}}">{{item.title}}</view>
+  </view>
+</i-drawer>

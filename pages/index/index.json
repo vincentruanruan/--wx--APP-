@@ -8,6 +8,8 @@
     "i-row": "../../dist/iview/row/index",
     "i-col": "../../dist/iview/col/index",
     "i-icon": "../../dist/iview/icon/index",
-    "v-footer":"../../components/footerItem/index"
+    
+    "v-footer":"../../components/footerItem/index",
+    "v-header": "../../components/headerItem/index"
   }
 }

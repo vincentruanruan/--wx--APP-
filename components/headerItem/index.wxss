@@ -1,0 +1,48 @@
+/* components/headerItem/index.wxss */
+
+.topBar {
+  height: 59px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  transition: all 0.3s;
+}
+
+.topBar.drop {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 5px;
+}
+
+.topBar image {
+  height: 43px;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  display: inline-block;
+}
+
+.topBar .otherBtn {
+  position: absolute;
+  color: #fff;
+  right: 10px;
+  top: 12px;
+}
+
+.topBar .otherBtn.drop {
+  color: #666;
+}
+
+.rightMenuShadow .menu-container {
+  background: #fff;
+}
+
+.menu-container .menuItem{
+  width: 140px;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
