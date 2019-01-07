@@ -1,0 +1,46 @@
+/* pages/news/desc.wxss */
+@import "/dist/wxParse/wxParse.wxss";
+
+.btnList {
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 5px;
+}
+
+.btnList text {
+  font-size: 15px;
+  padding: 7px 5px;
+  margin: 2px 3px;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+
+.btnList text.action {
+  border-bottom: 1px solid #108bec;
+}
+
+.news {
+  /* background: #f9f9f9; */
+}
+
+.banner image {
+  width: 100%;
+}
+
+.inner{
+  padding: 15px;
+  
+}
+.inner .title{
+  font-size: 20px;
+  margin: 5px 0;
+}
+.inner .datetime{
+  font-size: 12px;
+  color: #999;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.inner .desc{
+  padding: 10px 0;
+}
+

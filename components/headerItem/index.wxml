@@ -11,3 +11,5 @@
     <view class='menuItem' wx:for="{{rightMenu}}" wx:key="{{index}}">{{item.title}}</view>
   </view>
 </i-drawer>
+
+<view class="paddingBox" wx:if="{{paddingBox}}"></view>

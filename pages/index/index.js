@@ -23,32 +23,23 @@ Page({
     logoWhite: '/imgs/logo-white.png', // 头部设置
 
     imgUrls: [], //轮播 数据
-    
 
-    serverTitle:'',
+
+    serverTitle: '',
     server: [],
 
 
-    developTitle:'',
+    developTitle: '',
     develop: [],
 
 
-    recommendTitle:'',
-    recommend: [{
-      url: '/imgs/case1.png',
-      title: '需求沟通',
-    }, {
-      url: '/imgs/case1.png',
-      title: '交互设置',
-    }, {
-      url: '/imgs/case1.png',
-      title: '技术开发',
-    }, {
-      url: '/imgs/case1.png',
-      title: '发布上架',
-    }],
+    recommendTitle: '',
+    recommendBtns: [],
+    recommend: [],
+    recommendAction: 0,
 
-    newsTitle:'',
+
+    newsTitle: '',
     news: [],
 
     rightMenu: [{
@@ -73,7 +64,7 @@ Page({
   onLoad: function() {
     let that = this
     wx.request({
-      url: 'http://hidsy.maimaitoo.com/web/index.php?c=account&a=welcome&do=indexapi',
+      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=indexapi',
       success(res) {
         console.log(res)
         let dt = res.data.data
@@ -89,10 +80,12 @@ Page({
             develop: dt.developments.developments,
 
             recommendTitle: dt.cases.titleourservice,
+            recommendBtns: dt.cases.casemenu,
+            recommend: dt.cases.list,
 
             newsTitle: dt.news.titlexwzx,
             news: dt.news.news,
-            
+
           })
         }
       }
@@ -156,6 +149,13 @@ Page({
     }
   },
 
+  caseTapSwitch: function(e) { // 切换case
+    let id = e.currentTarget.dataset.id
+    // console.log(id)
+    this.setData({
+      recommendAction: id
+    })
+  }
 
 
 })

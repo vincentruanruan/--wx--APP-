@@ -3,15 +3,14 @@
 
 
 
-  <v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}"/>
+  <v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}" paddingBox="{{false}}" />
 
-  
-  
+
 
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" bindchange="bindchange" indicator-active-color="{{indicatorActiveColor}}" indicator-color="{{indicatorColor}}" style="height:{{bannerHeight[current]}}rpx;">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" data-id='{{index}}' class="slide-image" width="355" height="150" bindload="imageLoad" />
+        <image src="{{item}}" data-id='{{index}}' class="slide-image" bindload="imageLoad" />
       </swiper-item>
     </block>
   </swiper>
@@ -51,20 +50,12 @@
   <view class="case dpBox">
     <text class='title'><text class='dot'></text>{{recommendTitle}}</text>
     <view class='btnList'>
-      <text class='action'>按钮</text>
-      <text>按钮546</text>
-      <text>按钮12321</text>
-      <text>按钮</text>
-      <text>按钮23</text>
-      <text>按钮312</text>
-      <text>按钮43534</text>
-      <text>按钮</text>
-      <text>按钮s54654</text>
+      <text class='{{recommendAction==item.id?"action":""}}' data-id="{{item.id}}" wx:for="{{recommendBtns}}" wx:key="{{index}}" bindtap="caseTapSwitch">{{item.categoryname}}</text>
     </view>
     <view class='list'>
       <i-row>
-        <i-col span="12" i-class="col-class" wx:for="{{recommend}}" wx:key="{{index}}">
-          <image class='itemIcon' src="{{item.url}}" mode='widthFix' />
+        <i-col span="12" i-class="col-class" wx:for="{{recommend[recommendAction].cases}}" wx:key="{{index}}">
+          <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
           <text class='itemTitle'>{{item.title}}</text>
         </i-col>
       </i-row>

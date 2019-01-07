@@ -20,7 +20,11 @@ Component({
     rightMenu: {
       type: Array,
       value: []
-    },   
+    },
+    paddingBox:{
+      type:Boolean,
+      value:true
+    }   
   },
 
   /**

@@ -1,0 +1,27 @@
+<!--pages/news/index.wxml-->
+
+
+<v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+</view>
+<view class="news">
+  <view class='btnList'>
+    <text class='{{newsAction==item.id?"action":""}}' data-id="{{item.id}}" wx:for="{{newGroup}}" wx:key="{{index}}" bindtap="newTapSwitch">{{item.categoryname}}</text>
+  </view>
+  <view class='list'>
+    <i-row wx:for="{{newsList}}" wx:key="{{index}}" data-id="{{item.id}}">
+      <i-col span="5" i-class="col-class" class="left">
+        <text class='month'>{{item.month}}</text>
+        <text class='year'>{{item.year}}</text>
+      </i-col>
+      <i-col span="19" i-class="col-class">
+        <text class='itemTitle'>{{item.title}}</text>
+        <text class='itemDesc'>{{item.abstract}}</text>
+      </i-col>
+    </i-row>
+  </view>
+</view>
+
+
+<v-footer />

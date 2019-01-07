@@ -1,0 +1,32 @@
+/* pages/about/index.wxss */
+
+.banner image {
+  width: 100%;
+}
+
+.desc{
+  padding: 15px;
+  font-size: 15px;
+  text-indent: 2rem;
+}
+
+.list .top{
+  text-align: center;
+  margin: 15px 0;
+}
+
+.list .top .title-cn{
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.list .top .title-en{
+  color: #ccc;
+  font-weight: bold;
+}
+.list  i-col{
+  text-align: center;
+}
+.list .itemIcon{
+  width: 50%;
+}

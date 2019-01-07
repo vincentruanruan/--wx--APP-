@@ -1,0 +1,23 @@
+<!--pages/news/desc.wxml-->
+
+
+<v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+</view>
+<view class="news">
+  <view class='btnList'>
+    <text class='{{newsAction==item.id?"action":""}}' data-id="{{item.id}}" wx:for="{{newGroup}}" wx:key="{{index}}" bindtap="newTapSwitch">{{item.categoryname}}</text>
+  </view>
+  <view class='inner'>
+    <view class='title'>{{title}}</view>
+    <view class='datetime'>{{datetime}}</view>
+    <view class='desc'>
+      <import src="../../dist/wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+</view>
+
+
+<v-footer />

@@ -46,3 +46,8 @@
   text-align: center;
   color: #999;
 }
+
+.paddingBox{
+  height: 59px;
+  background: #fff;
+}
