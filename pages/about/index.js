@@ -12,10 +12,14 @@ Page({
     topBarLogo: '/imgs/logo.png', // 头部设置
     logo: '/imgs/logo.png', // 头部设置
     logoWhite: '/imgs/logo-white.png', // 头部设置,
+    rightMenu: [],
 
     bannerImage: '',
     teams: [],
     certs: [],
+
+    spinShow: true, // 加载等待
+    
   },
 
   /**
@@ -36,6 +40,7 @@ Page({
             bannerImage: dt.banner.about,
             teams: dt.teams,
             certs: dt.certs,
+            rightMenu: dt.header.nav,
           })
         }
       }

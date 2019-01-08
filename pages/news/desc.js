@@ -22,6 +22,10 @@ Page({
     newsAction: 0, //等前选中的类型
     newstj: '', // 推荐新闻
 
+    rightMenu: [],
+
+    spinShow: true, // 加载等待
+
     title: '',
     datetime: '',
     desc: '',
@@ -36,6 +40,10 @@ Page({
     this.getData(e.currentTarget.dataset.id)
   },
   getData: function(id) {
+    this.setData({
+      spinShow: true
+    })
+    this.scrollTop()
     let that = this
     wx.request({
       url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=newsdetailapi',
@@ -54,11 +62,13 @@ Page({
             desc: dt.info.content,
             title: dt.info.title,
             datetime: dt.info.addtime,
-            newstj: dt.newstj
+            newstj: dt.newstj,
+            rightMenu: dt.header.nav,
+            spinShow: false
           })
         }
         WxParse.wxParse('article', 'html', that.data.desc, that, 5);
-        that.scrollTop()
+        
       }
     })
   },

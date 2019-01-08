@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    winHeight: wx.getSystemInfoSync().windowHeight,
+
 
 
     circular: true, // 轮播设置
@@ -21,6 +21,8 @@ Page({
     topBarLogo: '/imgs/logo-white.png', // 头部设置
     logo: '/imgs/logo.png', // 头部设置
     logoWhite: '/imgs/logo-white.png', // 头部设置
+
+    spinShow: true, // 加载等待
 
     imgUrls: [], //轮播 数据
 
@@ -42,23 +44,7 @@ Page({
     newsTitle: '',
     news: [],
 
-    rightMenu: [{
-        title: '首页',
-        link: ''
-      },
-      {
-        title: '新闻资讯',
-        link: ''
-      },
-      {
-        title: '关于我们',
-        link: ''
-      },
-      {
-        title: '联系我们',
-        link: ''
-      },
-    ],
+    rightMenu: [],
 
   },
   onLoad: function() {
@@ -71,6 +57,12 @@ Page({
         if (res.data.code == 200) {
           console.log(dt)
           that.setData({
+
+            topBarLogo: dt.header.logo[0],
+            logo: dt.header.logo[1],
+            logoWhite: dt.header.logo[0],
+            rightMenu: dt.header.nav,
+
             imgUrls: dt.carouse,
 
             serverTitle: dt.list.titleourservice,
@@ -86,6 +78,7 @@ Page({
             newsTitle: dt.news.titlexwzx,
             news: dt.news.news,
 
+            spinShow: false,
           })
         }
       }
@@ -156,7 +149,7 @@ Page({
       recommendAction: id
     })
   },
-  gotoDesc: function (e) {
+  gotoDesc: function(e) {
     let id = e.currentTarget.dataset.id
     console.log('desc?id=' + id)
     wx.navigateTo({

@@ -3,6 +3,7 @@
     "i-row": "../../dist/iview/row/index",
     "i-col": "../../dist/iview/col/index",
     "i-page": "../../dist/iview/page/index",
+    "i-spin": "../../dist/iview/spin/index",
     "v-footer": "../../components/footerItem/index",
     "v-header": "../../components/headerItem/index"
   }

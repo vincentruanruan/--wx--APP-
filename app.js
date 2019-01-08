@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl:'http://hidsy.maimaitoo.com/'
+    baseUrl:'http://hidsy.maimaitoo.com/',
   }
 })

@@ -1,7 +1,7 @@
 <!--pages/news/desc.wxml-->
 
-
-<v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+<i-spin size="large"  wx:if="{{spinShow}}"></i-spin>
+<v-header logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
 <view class='banner'>
   <image src="{{bannerImage}}" mode="widthFix" />
 </view>

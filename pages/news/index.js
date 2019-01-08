@@ -12,6 +12,9 @@ Page({
     topBarLogo: '/imgs/logo.png', // 头部设置
     logo: '/imgs/logo.png', // 头部设置
     logoWhite: '/imgs/logo-white.png', // 头部设置,
+    rightMenu:[],
+
+    spinShow: true, // 加载等待
 
     bannerImage: '',
     newGroup: [], // 新闻类型
@@ -72,6 +75,9 @@ Page({
   },
 
   getData: function() { // 获取数据
+    this.setData({
+      spinShow: true
+    })
     let that = this
     wx.request({
       data: {
@@ -92,7 +98,9 @@ Page({
             bannerImage: dt.banner.news,
             previousPage: parvious,
             nextPage: next,
-            allpage: dt.allpage
+            allpage: dt.allpage,
+            rightMenu: dt.header.nav,
+            spinShow: false
           })
         }
       }

@@ -1,9 +1,8 @@
 <!--index.wxml-->
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
 <view class="container">
 
-
-
-  <v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}" paddingBox="{{false}}" />
+  <v-header logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{false}}" />
 
 
 
@@ -13,7 +12,7 @@
         <image src="{{item}}" data-id='{{index}}' class="slide-image" bindload="imageLoad" />
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> 
 
 
 
@@ -84,6 +83,7 @@
 
 
   <v-footer />
+
 
 
 

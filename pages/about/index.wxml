@@ -1,5 +1,5 @@
 <!--pages/about/index.wxml-->
-<v-header logo="{{topBarLogo}}" drop="{{drop}}" winHeight="{{winHeight}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+<v-header logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
 <view class='banner'>
   <image src="{{bannerImage}}" mode="widthFix" />
 </view>
@@ -19,6 +19,7 @@
     </i-col>
   </i-row>
 </view>
+
 
 
 <v-footer />

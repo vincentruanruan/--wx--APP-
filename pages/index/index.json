@@ -8,6 +8,7 @@
     "i-row": "../../dist/iview/row/index",
     "i-col": "../../dist/iview/col/index",
     "i-icon": "../../dist/iview/icon/index",
+    "i-spin": "../../dist/iview/spin/index",
     
     "v-footer":"../../components/footerItem/index",
     "v-header": "../../components/headerItem/index"
