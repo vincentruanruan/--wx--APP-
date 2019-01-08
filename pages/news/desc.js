@@ -20,22 +20,22 @@ Page({
     bannerImage: '',
     newGroup: [], // 新闻类型
     newsAction: 0, //等前选中的类型
-    newstj:'', // 推荐新闻
+    newstj: '', // 推荐新闻
 
-    title:'',
-    datetime:'',
-    desc:'',
+    title: '',
+    datetime: '',
+    desc: '',
   },
-  scrollTop: function () { // 滚动到顶部
+  scrollTop: function() { // 滚动到顶部
     // 控制滚动
     wx.pageScrollTo({
       scrollTop: 0
     })
   },
-  updateData:function(e){
+  updateData: function(e) {
     this.getData(e.currentTarget.dataset.id)
   },
-  getData:function(id){
+  getData: function(id) {
     let that = this
     wx.request({
       url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=newsdetailapi',
@@ -67,11 +67,22 @@ Page({
     let id = e.currentTarget.dataset.id
     // console.log(id)
     var pages = getCurrentPages();
-    var prevPage = pages[pages.length - 2];  //上一个页面
-    prevPage.setData({
-      newsAction: id
-    })
-    wx.navigateBack()
+    var prevPage = pages[pages.length - 2]; //上一个页面
+    // console.log(prevPage.route)
+    // pages / news / index
+
+    if (prevPage.route == 'pages/news/index') { //如果是新闻页面进入的
+      prevPage.setData({
+        newsAction: id
+      })
+      wx.navigateBack()
+    } else { // 不是新闻页面进入的
+      wx.redirectTo({
+        url: 'index?newsAction=' + id,
+      })
+    }
+
+
   },
 
   /**
@@ -79,7 +90,7 @@ Page({
    */
   onLoad: function(options) {
     this.getData(options.id)
-    
+
   },
 
   /**

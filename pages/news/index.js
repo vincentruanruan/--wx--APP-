@@ -30,7 +30,7 @@ Page({
     let id = e.currentTarget.dataset.id
     console.log('desc?id=' + id)
     wx.navigateTo({
-      url: 'desc?id='+id,
+      url: 'desc?id=' + id,
     })
   },
 
@@ -103,7 +103,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options.newsAction)
+    console.log(options)
+    if (options.newsAction) {
+      this.setData({
+        newsAction: options.newsAction
+      })
+    }
     this.getData()
   },
 

@@ -173,7 +173,7 @@ swiper-item image {
   /* display: block; */
   text-align: center;
   font-size: 13px;
-  /* margin: 5px; */
+  line-height: 34px;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;

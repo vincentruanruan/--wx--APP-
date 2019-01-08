@@ -155,7 +155,14 @@ Page({
     this.setData({
       recommendAction: id
     })
-  }
+  },
+  gotoDesc: function (e) {
+    let id = e.currentTarget.dataset.id
+    console.log('desc?id=' + id)
+    wx.navigateTo({
+      url: '../news/desc?id=' + id,
+    })
+  },
 
 
 })
