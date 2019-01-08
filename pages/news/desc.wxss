@@ -26,21 +26,49 @@
   width: 100%;
 }
 
-.inner{
+.inner {
   padding: 15px;
-  
 }
-.inner .title{
+
+.inner .title {
   font-size: 20px;
   margin: 5px 0;
 }
-.inner .datetime{
+
+.inner .datetime {
   font-size: 12px;
   color: #999;
   padding: 5px 0;
   border-bottom: 1px solid #f0f0f0;
 }
-.inner .desc{
+
+.inner .desc {
   padding: 10px 0;
+  font-size: 15px;
 }
 
+.newstj {
+  padding: 15px;
+}
+
+.newstj .title {
+  font-weight: bold;
+  color: #333;
+}
+
+.newstj .list {
+  padding: 5px 0;
+}
+
+.newstj .list .item {
+  list-style: disc;
+  /* padding-left: 15px; */
+  padding: 3px 0;
+  font-size: 14px;
+  color: #666;
+}
+.newstj .list .item text{
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
+}

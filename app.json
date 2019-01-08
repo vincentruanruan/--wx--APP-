@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/about/index",
+   
     "pages/index/index",
     "pages/news/index",
     "pages/news/desc",
-    
+    "pages/about/index",
     "pages/logs/logs"
   ],
   "window":{

@@ -10,17 +10,30 @@
     <text class='{{newsAction==item.id?"action":""}}' data-id="{{item.id}}" wx:for="{{newGroup}}" wx:key="{{index}}" bindtap="newTapSwitch">{{item.categoryname}}</text>
   </view>
   <view class='list'>
-    <i-row wx:for="{{newsList}}" wx:key="{{index}}" data-id="{{item.id}}">
+    <i-row wx:for="{{newsList}}" wx:key="{{index}}" >
       <i-col span="5" i-class="col-class" class="left">
         <text class='month'>{{item.month}}</text>
         <text class='year'>{{item.year}}</text>
       </i-col>
-      <i-col span="19" i-class="col-class">
+      <i-col span="19" i-class="col-class" bindtap="gotoDesc" data-id="{{item.id}}">
         <text class='itemTitle'>{{item.title}}</text>
         <text class='itemDesc'>{{item.abstract}}</text>
       </i-col>
     </i-row>
   </view>
+</view>
+
+<view class='pageBotton'>
+  <i-page current="{{ nowPage }}" total="{{allpage}}" bind:change="handleChange">
+  <view slot="prev">
+    <i-icon type="return"></i-icon>
+    上一步
+  </view>
+  <view slot="next">
+    下一步
+    <i-icon type="enter"></i-icon>
+  </view>
+</i-page>
 </view>
 
 

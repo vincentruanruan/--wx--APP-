@@ -19,5 +19,12 @@
   </view>
 </view>
 
+<view class='newstj'>
+  <view class='title'>推荐新闻</view>
+  <view class='list'>
+    <view class='item' wx:for="{{newstj}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='updateData'><text>·</text>{{item.title}}</view>
+  </view>
+</view>
+
 
 <v-footer />

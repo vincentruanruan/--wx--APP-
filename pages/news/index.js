@@ -13,19 +13,89 @@ Page({
     logo: '/imgs/logo.png', // 头部设置
     logoWhite: '/imgs/logo-white.png', // 头部设置,
 
-    bannerImage:'',
+    bannerImage: '',
     newGroup: [], // 新闻类型
     newsAction: 0, //等前选中的类型
     newsList: [], //新闻列表
 
-    
+    previousPage: 0,
+    nowPage: 1,
+    nextPage: 0,
+    allpage: 0
+
+
   },
 
+  gotoDesc: function(e) {
+    let id = e.currentTarget.dataset.id
+    console.log('desc?id=' + id)
+    wx.navigateTo({
+      url: 'desc?id='+id,
+    })
+  },
+
+  handleChange({ // 上一页下一页
+    detail
+  }) {
+    const type = detail.type;
+    if (type === 'next') {
+      console.log(this.data.nowPage)
+      this.setData({
+        nowPage: this.data.nextPage
+      });
+      this.getData()
+      this.scrollTop()
+    } else if (type === 'prev') {
+      console.log(this.data.nowPage && this.data.previousPage)
+      this.setData({
+        nowPage: this.data.previousPage
+      });
+      this.getData()
+      this.scrollTop()
+    }
+  },
+  scrollTop: function() { // 滚动到顶部
+    // 控制滚动
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+  },
   newTapSwitch: function(e) { //新闻类型切换
     let id = e.currentTarget.dataset.id
     // console.log(id)
     this.setData({
-      newsAction: id
+      newsAction: id,
+      nowPage: 1
+    })
+    this.getData()
+    this.scrollTop()
+  },
+
+  getData: function() { // 获取数据
+    let that = this
+    wx.request({
+      data: {
+        cid: this.data.newsAction,
+        page: this.data.nowPage
+      },
+      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=newsapi',
+      success(res) {
+        console.log(res)
+        let dt = res.data.data
+        let parvious = that.data.nowPage - 1 < 1 ? 0 : that.data.nowPage - 1
+        let next = that.data.nowPage + 1 > dt.allpage ? 0 : that.data.nowPage + 1
+        if (res.data.code == 200) {
+          console.log(dt)
+          that.setData({
+            newGroup: dt.categorys,
+            newsList: dt.lists,
+            bannerImage: dt.banner.news,
+            previousPage: parvious,
+            nextPage: next,
+            allpage: dt.allpage
+          })
+        }
+      }
     })
   },
 
@@ -33,23 +103,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let that = this
-    wx.request({
-      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=newsapi',
-      success(res) {
-        console.log(res)
-        let dt = res.data.data
-        if (res.data.code == 200) {
-          console.log(dt)
-          that.setData({
-            newGroup: dt.categorys,
-            newsList: dt.lists,
-            bannerImage: dt.banner.news,
-            
-          })
-        }
-      }
-    })
+    console.log(options.newsAction)
+    this.getData()
   },
 
   /**

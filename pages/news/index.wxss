@@ -76,3 +76,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.pageBotton{
+  margin-bottom: 20px;
+}

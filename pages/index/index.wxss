@@ -1,5 +1,3 @@
-
-
 swiper-item image {
   width: 100%;
 }
@@ -120,6 +118,12 @@ swiper-item image {
 .develop .itemTitle {
   font-size: 17px;
   margin: 10px 0;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .develop .itemDesc {
@@ -166,10 +170,16 @@ swiper-item image {
 }
 
 .case .itemTitle {
-  display: block;
+  /* display: block; */
   text-align: center;
-  font-size: 15px;
-  margin: 5px;
+  font-size: 13px;
+  /* margin: 5px; */
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .case .itemDesc {
@@ -231,4 +241,3 @@ swiper-item image {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
