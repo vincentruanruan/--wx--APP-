@@ -1,4 +1,4 @@
-// pages/about/index.js
+// pages/xiaochengxu/index.js
 
 const app = getApp()
 
@@ -12,17 +12,29 @@ Page({
     topBarLogo: '', // 头部设置
     logo: '', // 头部设置
     logoWhite: '', // 头部设置,
-    
+
     footer: {}, // 底部数据
-    
+
     rightMenu: [],
 
+    xiaochengx: [],
+    cases: [],
+    client: [],
+
     bannerImage: '',
-    teams: [],
-    certs: [],
+    bannerTitle: '',
+
+    casesBtnAction: 0,
+
 
     spinShow: true, // 加载等待
-    
+  },
+  changeCaseAction:function(e){ // 切换案例id
+    let id = e.currentTarget.dataset.id
+    // console.log(id)
+    this.setData({
+      casesBtnAction: id
+    })
   },
 
   /**
@@ -31,16 +43,16 @@ Page({
   onLoad: function(options) {
 
     wx.setNavigationBarTitle({
-      title: '关于我们'
+      title: '小程序'
     })
 
     console.log(this.data.desc)
     let that = this
     wx.request({
-      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=aboutapi',
+      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=xiaochengxuapi',
       success(res) {
         console.log(res)
-        let dt = res.data.list
+        let dt = res.data.data
 
         if (res.data.code == 200) {
           console.log(dt)
@@ -51,17 +63,23 @@ Page({
             logoWhite: dt.header.logo[1],
             rightMenu: dt.header.nav,
 
-            bannerImage: dt.banner.about,
-            teams: dt.teams,
-            certs: dt.certs,
+            bannerImage: dt.banner.xiaochengxu,
+            bannerTitle: dt.banner.xiaochengxutitle,
+
+            xiaochengx: dt.xiaochengx,
+            cases: dt.case,
+            client: dt.client,
+
+            casesBtnAction: dt.case.casemenu[0].id,
+
             rightMenu: dt.header.nav,
             footer: dt.footer,
+            spinShow: false,
           })
         }
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

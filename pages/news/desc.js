@@ -13,9 +13,11 @@ Page({
    */
   data: {
     drop: 'drop', // 头部设置
-    topBarLogo: '/imgs/logo.png', // 头部设置
-    logo: '/imgs/logo.png', // 头部设置
-    logoWhite: '/imgs/logo-white.png', // 头部设置,
+    topBarLogo: '', // 头部设置
+    logo: '', // 头部设置
+    logoWhite: '', // 头部设置,
+
+    footer: {}, // 底部数据
 
     bannerImage: '',
     newGroup: [], // 新闻类型
@@ -57,6 +59,12 @@ Page({
         if (res.data.code == 200) {
           console.log(dt)
           that.setData({
+
+            topBarLogo: dt.header.logo[1],
+            logo: dt.header.logo[0],
+            logoWhite: dt.header.logo[1],
+            rightMenu: dt.header.nav,
+
             newGroup: dt.categorts,
             bannerImage: dt.banner.news,
             desc: dt.info.content,
@@ -64,6 +72,7 @@ Page({
             datetime: dt.info.addtime,
             newstj: dt.newstj,
             rightMenu: dt.header.nav,
+            footer: dt.footer,
             spinShow: false
           })
         }

@@ -82,7 +82,7 @@
 
 
 
-  <v-footer />
+  <v-footer footer="{{footer}}" />
 
 
 

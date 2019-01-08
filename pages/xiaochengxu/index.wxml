@@ -1,0 +1,64 @@
+<!--pages/xiaochengxu/index.wxml-->
+
+<v-header logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+  <view class='title'>{{bannerTitle}}</view>
+</view>
+
+
+<view class='list'>
+  <view class='top'>
+    <view class='title-cn'>{{cases.titlebfanzs}}</view>
+    <view class='title-en'>{{cases.titlebfanzsen}}</view>
+  </view>
+  <view class='casesBtn'>
+    <text class='{{item.id == casesBtnAction?"action":""}}' wx:for="{{cases.casemenu}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='changeCaseAction'>{{item.categoryname}}</text>
+  </view>
+  <i-row>
+    <i-col span="12" i-class="col-class" wx:for="{{certs}}" wx:key="{{index}}">
+      <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
+      <view class='title'>{{item.name}}</view>
+    </i-col>
+  </i-row>
+</view>
+
+<view class='listxcx'>
+  <view class='top'>
+    <view class='title-cn'>{{xiaochengx.titlexcxrk}}</view>
+    <view class='title-en'>{{xiaochengx.titlexcxrken}}</view>
+  </view>
+  <i-row>
+    <i-col span="12" i-class="col-class" wx:for="{{xiaochengx.rukous}}" wx:key="{{index}}">
+      <view class='inner'>
+        <view class='bg'>
+          <i-avatar src="{{item.image}}" size="large" shape="circle"></i-avatar>
+          <view class='right'>
+            <view class='title'>{{item.title}}</view>
+            <view class='desc'>{{item.abstract}}</view>
+          </view>
+        </view>
+      </view>
+    </i-col>
+  </i-row>
+</view>
+
+
+
+
+
+<view class='list'>
+  <view class='top'>
+    <view class='title-cn'>{{client.titlesykh}}</view>
+    <view class='title-en'>{{client.titlesykhen}}</view>
+  </view>
+  <i-row>
+    <i-col span="6" i-class="col-class" wx:for="{{client.client}}" wx:key="{{index}}">
+      <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
+      <view class='title'>{{item.title}}</view>
+    </i-col>
+  </i-row>
+</view>
+
+
+<v-footer footer="{{footer}}" />

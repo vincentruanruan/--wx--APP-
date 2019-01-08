@@ -1,0 +1,135 @@
+/* pages/xiaochengxu/index.wxss */
+
+.banner {
+  position: relative;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.banner .title {
+  position: absolute;
+  top: 30%;
+  left: 20px;
+  width: 100%;
+  color: #fff;
+}
+
+.list {
+  margin-bottom: 50px;
+}
+
+.list .top {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.list .top .title-cn {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.list .top .title-en {
+  color: #ccc;
+  font-weight: bold;
+}
+
+.list  i-col {
+  text-align: center;
+}
+
+.list .itemIcon {
+  width: 50%;
+}
+
+.list .casesBtn {
+  margin-top: 10px;
+  text-align: center;
+  padding: 15px;
+}
+
+.list .casesBtn text {
+  border: 1px solid #eaeaea;
+  color: #999;
+  margin: 5px 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.list .casesBtn text.action {
+  background: #108bec;
+  border: 1px #108bec solid;
+  color: #fff;
+}
+
+
+.listxcx {
+  background: #f9f9f9;
+  margin-bottom: 50px;
+  padding: 0 7.5px;
+  padding-bottom: 25px;
+}
+
+.listxcx .top {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.listxcx .top .title-cn {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.listxcx .top .title-en {
+  color: #ccc;
+  font-weight: bold;
+}
+
+.listxcx  i-col .inner {
+  /* text-align: center; */
+  padding: 7.5px;
+}
+
+.listxcx  i-col .inner .bg {
+  position: relative;
+  padding: 7.5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 5px;
+  border-radius: 82.5px;
+  background: #fff;
+}
+
+.listxcx  i-col .inner .bg .right {
+  position: absolute;
+  padding-left: 60px;
+  top: 7.5px;
+}
+
+.listxcx  i-col .inner .bg .right .title {
+  font-size: 14px;
+  color: #333;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 4px;
+}
+
+.listxcx  i-col .inner .bg .right .desc {
+  font-size: 14px;
+  color: #999;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

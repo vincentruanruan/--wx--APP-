@@ -9,10 +9,12 @@ Page({
    */
   data: {
     drop: 'drop', // 头部设置
-    topBarLogo: '/imgs/logo.png', // 头部设置
-    logo: '/imgs/logo.png', // 头部设置
-    logoWhite: '/imgs/logo-white.png', // 头部设置,
-    rightMenu:[],
+    topBarLogo: '', // 头部设置
+    logo: '', // 头部设置
+    logoWhite: '', // 头部设置,
+    rightMenu: [],
+
+    footer: {}, // 底部数据
 
     spinShow: true, // 加载等待
 
@@ -93,6 +95,12 @@ Page({
         if (res.data.code == 200) {
           console.log(dt)
           that.setData({
+
+            topBarLogo: dt.header.logo[1],
+            logo: dt.header.logo[0],
+            logoWhite: dt.header.logo[1],
+            rightMenu: dt.header.nav,
+
             newGroup: dt.categorys,
             newsList: dt.lists,
             bannerImage: dt.banner.news,
@@ -100,6 +108,7 @@ Page({
             nextPage: next,
             allpage: dt.allpage,
             rightMenu: dt.header.nav,
+            footer: dt.footer,
             spinShow: false
           })
         }

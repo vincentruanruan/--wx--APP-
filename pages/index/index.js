@@ -18,11 +18,13 @@ Page({
     current: 0, // 轮播设置
 
     drop: '', // 头部设置
-    topBarLogo: '/imgs/logo-white.png', // 头部设置
-    logo: '/imgs/logo.png', // 头部设置
-    logoWhite: '/imgs/logo-white.png', // 头部设置
+    topBarLogo: '', // 头部设置
+    logo: '', // 头部设置
+    logoWhite: '', // 头部设置
 
     spinShow: true, // 加载等待
+
+    footer:{}, // 底部数据
 
     imgUrls: [], //轮播 数据
 
@@ -77,6 +79,8 @@ Page({
 
             newsTitle: dt.news.titlexwzx,
             news: dt.news.news,
+
+            footer: dt.footer,
 
             spinShow: false,
           })

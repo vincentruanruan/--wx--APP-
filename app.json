@@ -1,11 +1,17 @@
 {
   "pages":[
-   
+   "pages/xiaochengxu/index",
     "pages/index/index",
     "pages/news/index",
     "pages/news/desc",
     "pages/about/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/solve/index",
+    
+    "pages/dingzhi/index",
+    "pages/daili/index",
+    "pages/contact/index",
+    "pages/help/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

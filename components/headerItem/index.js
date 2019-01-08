@@ -41,11 +41,20 @@ Component({
       });
     },
 
-    backHome: function (complete) {
-      wx.navigateBack({
-        delta: 999,
-        complete: complete
-      })
+    backHome: function(complete) { // 跳转 （返回首页，回调 进行跳转）
+      let pages = getCurrentPages();
+      let currentPage = pages[pages.length - 1];
+      let pg = '/pages/index/index'
+      if ('/' + currentPage.route == pg) {
+        console.log(11111)
+        complete()
+      } else {
+        console.log(22222)
+        wx.navigateBack({
+          delta: 999,
+          success: complete
+        })
+      }
     },
 
     menuTap: function(e) {
@@ -55,52 +64,49 @@ Component({
       let currentPage = pages[pages.length - 1];
       let todo = e.currentTarget.dataset.do
       let pg = ''
-      console.log(currentPage.route)
+      // console.log(currentPage.route)
       switch (todo) {
         case 'home':
-          this.backHome()
+          // this.backHome(null)
+          pg = '/pages/index/index'
           break;
         case 'solve':
-
+          pg = '/pages/solve/index' // 未完成
           break;
         case 'xiaochengxu':
-
+          pg = '/pages/xiaochengxu/index' // 未完成
           break;
         case 'dingzhi':
-
+          pg = '/pages/dingzhi/index' // 未完成
           break;
         case 'daili':
-
+          pg = '/pages/daili/index' // 未完成
           break;
         case 'news':
           pg = '/pages/news/index'
-          if ('/' + currentPage.route == pg) {
-            this.backHome(function() {
-              wx.navigateTo({
-                url: pg,
-              })
-            })
-          }
           break;
         case 'about':
-
           pg = '/pages/about/index'
-          if ('/' + currentPage.route == pg) {
-            this.backHome(function() {
-              wx.navigateTo({
-                url: pg,
-              })
-            })
-          }
           break;
         case 'contact':
-
+          pg = '/pages/contact/index' // 未完成
           break;
         case 'help':
-
+          pg = '/pages/help/index' // 未完成
           break;
         default:
           break
+      }
+
+      if ('/' + currentPage.route != pg) { // 当前页面不进行跳转
+        this.backHome(function() {
+          if (pg != '/pages/index/index') { // 返回首页不执行回调
+            wx.navigateTo({
+              url: pg,
+            })
+          }
+
+        })
       }
 
       this.toggleRightMenu()
