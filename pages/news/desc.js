@@ -51,7 +51,7 @@ Page({
         id: id
       },
       success(res) {
-        this.setData({
+        that.setData({
           spinShow: true
         })
         console.log(res)

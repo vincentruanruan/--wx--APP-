@@ -86,7 +86,7 @@ Component({
           pg = '/pages/xiaochengxu/index'
           break;
         case 'dingzhi':
-          pg = '/pages/dingzhi/index' // 未完成
+          pg = '/pages/dingzhi/index'
           break;
         case 'daili':
           pg = '/pages/daili/index' // 未完成

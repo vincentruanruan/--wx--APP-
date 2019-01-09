@@ -1,2 +1,65 @@
 <!--pages/dingzhi/index.wxml-->
-<text>pages/dingzhi/index.wxml</text>
+
+
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
+<v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+  <view class='title'>{{bannerTitle}}</view>
+</view>
+
+
+
+<view class='list'>
+  <view class='top'>
+    <view class='title-cn'>团队介绍</view>
+    <view class='title-en'>Team Introduction</view>
+  </view>
+  <i-row>
+    <i-col span="12" i-class="col-class" wx:for="{{cando.cando}}" wx:key="{{index}}">
+      <view class='inner'>
+        <view class='bg'>
+          <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
+          <view class='title'>{{item.title}}</view>
+          <view class='desc'>{{item.miaoshu}}</view>
+        </view>
+      </view>
+    </i-col>
+  </i-row>
+</view>
+
+<view class='list2'>
+  <view class='top'>
+    <view class='title-cn'>团队介绍</view>
+    <view class='title-en'>Team Introduction</view>
+  </view>
+  <i-row>
+    <i-col span="12" i-class="col-class" wx:for="{{youshi.youshi}}" wx:key="{{index}}">
+      <view class='inner'>
+        <view class='bg'>
+          <view class='circle'></view>
+          <text class='num'>{{item.num}}</text>
+          <view class='title'>{{item.title}}</view>
+          <view class='desc'>{{item.miaoshu}}</view>
+        </view>
+      </view>
+    </i-col>
+  </i-row>
+</view>
+
+<view class='list3'>
+  <view class='top'>
+    <view class='title-cn'>团队介绍</view>
+    <view class='title-en'>Team Introduction</view>
+    <view class='img'>
+      <image src="{{process.dzt}}" mode="widthFix" />
+    </view>
+  </view>
+</view>
+
+
+
+<v-footer footer="{{footer}}">
+  <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+</v-footer>
