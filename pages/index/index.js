@@ -24,7 +24,7 @@ Page({
 
     spinShow: true, // 加载等待
 
-    footer:{}, // 底部数据
+    footer: {}, // 底部数据
 
     imgUrls: [], //轮播 数据
 
@@ -160,6 +160,11 @@ Page({
       url: '../news/desc?id=' + id,
     })
   },
+  footerTo: function(e) { // 底部按钮点击跳转
+    let todo = e.currentTarget.dataset.do
+    console.log(todo)
+    this.selectComponent("#v-header").goto(todo)
 
+  }
 
 })

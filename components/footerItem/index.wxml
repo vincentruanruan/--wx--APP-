@@ -1,5 +1,10 @@
 <!--components/footerItem/index.wxml-->
 <view class='footer'>
+
+  <view class='menuBtns'>
+    <slot></slot>
+  </view>
+
   <view class='footItem'>
     <i-icon type="customerservice" size="15" />Tel： {{footer.tel}}</view>
   <view class='footItem'>

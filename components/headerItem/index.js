@@ -1,4 +1,7 @@
 // components/headerItem/index.js
+
+const app = getApp()
+
 Component({
   /**
    * 组件的属性列表
@@ -46,10 +49,10 @@ Component({
       let currentPage = pages[pages.length - 1];
       let pg = '/pages/index/index'
       if ('/' + currentPage.route == pg) {
-        console.log(11111)
+        // console.log(11111)
         complete()
       } else {
-        console.log(22222)
+        // console.log(22222)
         wx.navigateBack({
           delta: 999,
           success: complete
@@ -58,11 +61,17 @@ Component({
     },
 
     menuTap: function(e) {
+      let todo = e.currentTarget.dataset.do
 
+      this.goto(todo)
+      this.toggleRightMenu()
+    },
+
+    goto: function(todo) {
       let pages = getCurrentPages();
       let prevPage = pages[pages.length - 2]; //上一个页面
       let currentPage = pages[pages.length - 1];
-      let todo = e.currentTarget.dataset.do
+
       let pg = ''
       // console.log(currentPage.route)
       switch (todo) {
@@ -109,9 +118,8 @@ Component({
         })
       }
 
-      this.toggleRightMenu()
-
+      
     }
 
-  }
+  },
 })

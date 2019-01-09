@@ -104,6 +104,13 @@ Page({
 
   },
 
+  footerTo: function (e) { // 底部按钮点击跳转
+    let todo = e.currentTarget.dataset.do
+    console.log(todo)
+    this.selectComponent("#v-header").goto(todo)
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

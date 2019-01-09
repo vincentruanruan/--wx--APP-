@@ -2,7 +2,7 @@
 <i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
 <view class="container">
 
-  <v-header logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{false}}" />
+  <v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{false}}" />
 
 
 
@@ -12,7 +12,7 @@
         <image src="{{item}}" data-id='{{index}}' class="slide-image" bindload="imageLoad" />
       </swiper-item>
     </block>
-  </swiper> 
+  </swiper>
 
 
 
@@ -60,7 +60,7 @@
       </i-row>
     </view>
   </view>
-  
+
 
   <view class="news dpBox">
     <text class='title'><text class='dot'></text>{{newsTitle}}</text>
@@ -76,15 +76,17 @@
         </i-col>
       </i-row>
     </view>
-  </view> 
+  </view>
 
 
 
 
 
-  <v-footer footer="{{footer}}" />
 
 
+  <v-footer footer="{{footer}}">
+    <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+  </v-footer>
 
 
 </view>

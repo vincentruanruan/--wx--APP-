@@ -69,7 +69,6 @@
   color: #fff;
 }
 
-
 .listxcx {
   background: #f9f9f9;
   margin-bottom: 50px;
@@ -132,4 +131,51 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.list .casesList {
+  padding: 7.5px;
+}
+
+.list .casesList .inner {
+  padding: 0 7.5px;
+  margin-bottom: 15px;
+}
+
+.list .casesList .itemIcon {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.list .casesList .title {
+  font-size: 15px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+.list .userList {
+  padding: 7.5px;
+}
+
+.list .userList .inner {
+  padding: 0 7.5px;
+  margin-bottom: 15px;
+}
+.list .userList .itemIcon {
+  width: 100%;
+}
+.list .userList .title{
+  font-size: 13px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: 5px;
 }

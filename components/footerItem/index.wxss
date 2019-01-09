@@ -26,3 +26,13 @@
   font-size: 12px;
   margin-top: 5px;
 }
+
+.menuBtns{
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.menuBtns text{
+  display: inline-block;
+  margin-right: 15px;
+}

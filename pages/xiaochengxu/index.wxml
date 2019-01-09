@@ -1,27 +1,13 @@
 <!--pages/xiaochengxu/index.wxml-->
 
-<v-header logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+<v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
 <view class='banner'>
   <image src="{{bannerImage}}" mode="widthFix" />
   <view class='title'>{{bannerTitle}}</view>
 </view>
 
 
-<view class='list'>
-  <view class='top'>
-    <view class='title-cn'>{{cases.titlebfanzs}}</view>
-    <view class='title-en'>{{cases.titlebfanzsen}}</view>
-  </view>
-  <view class='casesBtn'>
-    <text class='{{item.id == casesBtnAction?"action":""}}' wx:for="{{cases.casemenu}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='changeCaseAction'>{{item.categoryname}}</text>
-  </view>
-  <i-row>
-    <i-col span="12" i-class="col-class" wx:for="{{certs}}" wx:key="{{index}}">
-      <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
-      <view class='title'>{{item.name}}</view>
-    </i-col>
-  </i-row>
-</view>
+
 
 <view class='listxcx'>
   <view class='top'>
@@ -43,22 +29,44 @@
   </i-row>
 </view>
 
-
-
-
+<view class='list'>
+  <view class='top'>
+    <view class='title-cn'>{{cases.titlebfanzs}}</view>
+    <view class='title-en'>{{cases.titlebfanzsen}}</view>
+  </view>
+  <view class='casesBtn'>
+    <text class='{{item.id == casesBtnAction?"action":""}}' wx:for="{{cases.casemenu}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='changeCaseAction'>{{item.categoryname}}</text>
+  </view>
+  <view class='casesList'>
+    <i-row>
+      <i-col span="12" i-class="col-class" wx:for="{{cases.list[casesBtnAction].cases}}" wx:key="{{index}}">
+        <view class='inner'>
+          <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
+          <view class='title'>{{item.title}}</view>
+        </view>
+      </i-col>
+    </i-row>
+  </view>
+</view>
 
 <view class='list'>
   <view class='top'>
     <view class='title-cn'>{{client.titlesykh}}</view>
     <view class='title-en'>{{client.titlesykhen}}</view>
   </view>
-  <i-row>
-    <i-col span="6" i-class="col-class" wx:for="{{client.client}}" wx:key="{{index}}">
-      <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
-      <view class='title'>{{item.title}}</view>
-    </i-col>
-  </i-row>
+  <view class='userList'>
+    <i-row>
+      <i-col span="6" i-class="col-class" wx:for="{{client.client}}" wx:key="{{index}}">
+        <view class='inner'>
+          <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
+          <view class='title'>{{item.title}}</view>
+        </view>
+      </i-col>
+    </i-row>
+  </view>
 </view>
 
 
-<v-footer footer="{{footer}}" />
+<v-footer footer="{{footer}}">
+  <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+</v-footer>

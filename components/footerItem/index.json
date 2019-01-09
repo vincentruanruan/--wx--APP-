@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "i-icon": "../../dist/iview/icon/index"
+    "i-icon": "../../dist/iview/icon/index",
+    "i-row": "../../dist/iview/row/index",
+    "i-col": "../../dist/iview/col/index"
   }
 }
