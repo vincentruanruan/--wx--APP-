@@ -2,6 +2,7 @@
 
 const app = getApp()
 
+
 Page({
 
   /**
@@ -20,6 +21,7 @@ Page({
     bannerImage: '',
     teams: [],
     certs: [],
+    contend:'',
 
     spinShow: true, // 加载等待
     
@@ -60,10 +62,12 @@ Page({
             rightMenu: dt.header.nav,
 
             bannerImage: dt.banner.about,
+            contend: dt.banner.contend,
             teams: dt.teams,
             certs: dt.certs,
             rightMenu: dt.header.nav,
             footer: dt.footer,
+            spinShow:false
           })
         }
       }

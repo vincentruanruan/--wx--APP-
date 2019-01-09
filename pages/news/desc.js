@@ -31,6 +31,7 @@ Page({
     title: '',
     datetime: '',
     desc: '',
+    navTitle: '',
   },
   scrollTop: function() { // 滚动到顶部
     // 控制滚动
@@ -42,9 +43,6 @@ Page({
     this.getData(e.currentTarget.dataset.id)
   },
   getData: function(id) {
-    this.setData({
-      spinShow: true
-    })
     this.scrollTop()
     let that = this
     wx.request({
@@ -53,6 +51,9 @@ Page({
         id: id
       },
       success(res) {
+        this.setData({
+          spinShow: true
+        })
         console.log(res)
         let dt = res.data.data
 
@@ -73,11 +74,13 @@ Page({
             newstj: dt.newstj,
             rightMenu: dt.header.nav,
             footer: dt.footer,
-            spinShow: false
+            spinShow: false,
+            navTitle: dt.title,
           })
+          that.setNavTitle()
         }
         WxParse.wxParse('article', 'html', that.data.desc, that, 5);
-        
+
       }
     })
   },
@@ -104,7 +107,13 @@ Page({
 
   },
 
-  footerTo: function (e) { // 底部按钮点击跳转
+  setNavTitle: function() {
+    wx.setNavigationBarTitle({
+      title: this.data.navTitle,
+    })
+  },
+
+  footerTo: function(e) { // 底部按钮点击跳转
     let todo = e.currentTarget.dataset.do
     console.log(todo)
     this.selectComponent("#v-header").goto(todo)

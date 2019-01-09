@@ -28,6 +28,7 @@ Page({
 
     imgUrls: [], //轮播 数据
 
+    navTitle: '',
 
     serverTitle: '',
     server: [],
@@ -81,11 +82,17 @@ Page({
             news: dt.news.news,
 
             footer: dt.footer,
-
+            navTitle: dt.title,
             spinShow: false,
           })
         }
       }
+    })
+
+  },
+  onReady: function() {
+    wx.setNavigationBarTitle({
+      title: this.data.navTitle,
     })
   },
   changeIndicatorDots(e) {

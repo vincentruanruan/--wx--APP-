@@ -26,10 +26,12 @@ Page({
 
     casesBtnAction: 0,
 
+    navTitle: '',
+
 
     spinShow: true, // 加载等待
   },
-  changeCaseAction:function(e){ // 切换案例id
+  changeCaseAction: function(e) { // 切换案例id
     let id = e.currentTarget.dataset.id
     // console.log(id)
     this.setData({
@@ -37,22 +39,23 @@ Page({
     })
   },
 
-  footerTo: function (e) { // 底部按钮点击跳转
+  footerTo: function(e) { // 底部按钮点击跳转
     let todo = e.currentTarget.dataset.do
     console.log(todo)
     this.selectComponent("#v-header").goto(todo)
 
   },
 
+  setNavTitle:function(){
+    wx.setNavigationBarTitle({
+      title: this.data.navTitle,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-    wx.setNavigationBarTitle({
-      title: '小程序'
-    })
-
     // console.log(this.data.desc)
     let that = this
     wx.request({
@@ -82,10 +85,13 @@ Page({
             rightMenu: dt.header.nav,
             footer: dt.footer,
             spinShow: false,
+            navTitle: dt.title,
           })
+          that.setNavTitle()
         }
       }
     })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

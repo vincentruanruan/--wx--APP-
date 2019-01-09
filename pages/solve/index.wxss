@@ -1,1 +1,89 @@
 /* pages/solve/index.wxss */
+page{
+  background: #f4f4f4;
+}
+.banner {
+  position: relative;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.banner .title {
+  position: absolute;
+  top: 30%;
+  left: 20px;
+  width: 100%;
+  color: #fff;
+}
+
+.categorysBtns {
+  background: #fff;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 5px;
+}
+
+.categorysBtns text {
+  font-size: 15px;
+  padding: 7px 5px;
+  margin: 2px 3px;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+
+.categorysBtns text.action {
+  border-bottom: 1px solid #108bec;
+}
+
+.list {
+  padding: 20px 7.5px;
+  background: #f4f4f4;
+  /* text-align: center; */
+}
+
+.list .inner {
+  padding: 0 7.5px;
+  margin-bottom: 20px;
+}
+
+.list .inner .bg {
+  background: #fff;
+}
+
+.list .inner image {
+  width: 100%;
+}
+
+.list .inner .title {
+  color: #333;
+  font-size: 15px;
+  padding: 5px 10px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.list .inner .desc {
+  color: #999;
+  font-size: 13px;
+  padding: 0px 10px 8px 10px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.pageBotton {
+  background: #f4f4f4;
+  margin-bottom: 20px;
+}

@@ -11,7 +11,9 @@
     <i-icon type="mail" size="15" />E-mai：{{footer.email}}</view>
   <view class='footItem'>
     <i-icon type="coordinates" size="15" />Add：{{footer.site}}</view>
-
+  <view class='shangbiao'>
+  {{footer.copyright.copyright}}  {{footer.copyright.records}}
+  </view>
   <view>
     <image src='{{footer.erweima}}' mode='widthFix' class='qrcode'></image>
   </view>

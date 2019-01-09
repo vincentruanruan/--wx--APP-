@@ -1,11 +1,11 @@
 <!--pages/about/index.wxml-->
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
 <v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
 <view class='banner'>
   <image src="{{bannerImage}}" mode="widthFix" />
 </view>
 
-<view class='desc'>2017年，成立来亿科技，专注于承接项目外包，包括APP开发、商城系统开发、社交类APP开发、微信开发、系统开发等，</view>
-
+<view class='desc'>{{contend}}</view>
 
 <view class='list'>
   <view class='top'>

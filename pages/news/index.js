@@ -26,7 +26,9 @@ Page({
     previousPage: 0,
     nowPage: 1,
     nextPage: 0,
-    allpage: 0
+    allpage: 0,
+
+    navTitle: '',
 
 
   },
@@ -109,25 +111,33 @@ Page({
             allpage: dt.allpage,
             rightMenu: dt.header.nav,
             footer: dt.footer,
-            spinShow: false
+            spinShow: false,
+            navTitle: dt.title,
           })
+          that.setNavTitle()
         }
       }
     })
   },
 
-  footerTo: function (e) { // 底部按钮点击跳转
+  footerTo: function(e) { // 底部按钮点击跳转
     let todo = e.currentTarget.dataset.do
     console.log(todo)
     this.selectComponent("#v-header").goto(todo)
 
   },
 
+  setNavTitle: function () {
+    wx.setNavigationBarTitle({
+      title: this.data.navTitle,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
+    // console.log(options)
     if (options.newsAction) {
       this.setData({
         newsAction: options.newsAction
@@ -140,6 +150,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+
 
   },
 

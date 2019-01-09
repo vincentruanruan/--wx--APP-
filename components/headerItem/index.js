@@ -62,7 +62,7 @@ Component({
 
     menuTap: function(e) {
       let todo = e.currentTarget.dataset.do
-
+      console.log('header --- ' + todo)
       this.goto(todo)
       this.toggleRightMenu()
     },
@@ -80,10 +80,10 @@ Component({
           pg = '/pages/index/index'
           break;
         case 'solve':
-          pg = '/pages/solve/index' // 未完成
+          pg = '/pages/solve/index'
           break;
         case 'xiaochengxu':
-          pg = '/pages/xiaochengxu/index' // 未完成
+          pg = '/pages/xiaochengxu/index'
           break;
         case 'dingzhi':
           pg = '/pages/dingzhi/index' // 未完成
