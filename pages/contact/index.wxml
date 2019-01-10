@@ -1,2 +1,40 @@
-<!--pages/contact/index.wxml-->
-<text>pages/contact/index.wxml</text>
+<!--pages/dingzhi/index.wxml-->
+
+
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
+<v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+  <view class='title'>{{bannerTitle}}</view>
+</view>
+
+
+<view class='inner'>
+
+  <view>{{info.company}}</view>
+  <view class='url'>{{info.url}}</view>
+  <view>{{info.dianhua}}</view>
+
+  <view class='sm'>
+    <text>Phone: {{info.shouji}}</text>
+    <text>QQ: {{info.qq}}</text>
+  </view>
+  <view>{{info.email}}</view>
+  <view>{{info.dizhi}}</view>
+  <view>{{dizhi.company}}</view>
+
+  <view class='mapView'>
+    <map id="map" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" scale="14" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+  </view>
+
+</view>
+
+<!-- 113.3912 23.172696 -->
+
+
+
+
+<v-footer footer="{{footer}}">
+  <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+</v-footer>
