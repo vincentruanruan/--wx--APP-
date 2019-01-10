@@ -1,2 +1,63 @@
-<!--pages/daili/index.wxml-->
-<text>pages/daili/index.wxml</text>
+<!--pages/dingzhi/index.wxml-->
+
+
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
+<v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+  <view class='title'>{{bannerTitle}}</view>
+</view>
+
+
+<view class='list'>
+  <view class='top'>
+    <view class='title-cn'>{{market.title}}</view>
+    <view class='title-en'>{{market.subhead}}</view>
+  </view>
+  <view class='desc'>
+    <import src="../../dist/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+
+
+<view class='list2'>
+  <view class='top'>
+    <view class='title-cn'>{{gain.title}}</view>
+    <view class='title-en'>{{gain.subhead}}</view>
+  </view>
+  <i-row>
+    <i-col span="24" i-class="col-class" wx:for="{{gain.gain}}" wx:key="{{index}}">
+      <view class='inner'>
+        <view class='bg'>
+          <image class='itemIcon' src="{{item.image}}" mode='widthFix' />
+          <view class='right'>
+            <view class='title'>{{item.title}}</view>
+            <view class='desc'>{{item.content}}</view>
+          </view>
+        </view>
+      </view>
+    </i-col>
+  </i-row>
+</view>
+
+<view class='list3'>
+  <view class='top'>
+    <view class='title-cn'>{{daili.title}}</view>
+    <view class='title-en'>{{daili.subhead}}</view>
+  </view>
+  <view class='textGroup'>
+    <view class='item' wx:for="{{daili.condition}}" wx:key="{{index}}">
+      <i-avatar size="small" shape="circle">{{index+1}}</i-avatar>{{item.title}}</view>
+  </view>
+</view>
+
+
+
+
+
+
+<v-footer footer="{{footer}}">
+  <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+</v-footer>

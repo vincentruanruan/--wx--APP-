@@ -13,8 +13,8 @@
 
 <view class='list'>
   <view class='top'>
-    <view class='title-cn'>团队介绍</view>
-    <view class='title-en'>Team Introduction</view>
+    <view class='title-cn'>{{cando.title}}</view>
+    <view class='title-en'>{{cando.subhead}}</view>
   </view>
   <i-row>
     <i-col span="12" i-class="col-class" wx:for="{{cando.cando}}" wx:key="{{index}}">
@@ -31,8 +31,8 @@
 
 <view class='list2'>
   <view class='top'>
-    <view class='title-cn'>团队介绍</view>
-    <view class='title-en'>Team Introduction</view>
+    <view class='title-cn'>{{youshi.title}}</view>
+    <view class='title-en'>{{youshi.subhead}}</view>
   </view>
   <i-row>
     <i-col span="12" i-class="col-class" wx:for="{{youshi.youshi}}" wx:key="{{index}}">
