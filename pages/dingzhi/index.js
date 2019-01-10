@@ -34,10 +34,6 @@ Page({
     this.scrollTop()
     wx.request({
       url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=customizeapi',
-      data: {
-        cid: this.data.categoryAction,
-        page: this.data.nowPage
-      },
       success(res) {
         console.log(res)
         let dt = res.data.data

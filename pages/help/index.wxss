@@ -1,1 +1,112 @@
-/* pages/help/index.wxss */
+/* pages/dingzhi/index.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.banner {
+  position: relative;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.banner .title {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 100%;
+  color: #fff;
+}
+
+.banner .inputGroup {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background: #fff;
+  font-size: 12px;
+}
+.banner .inputGroup keyword{
+  width: 120px;
+  display: inline-block;
+  background: #fff;
+}
+
+
+.btnList {
+  background: #fff;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 5px;
+}
+
+.btnList text {
+  font-size: 15px;
+  padding: 7px 5px;
+  margin: 2px 3px;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+
+.btnList text.action {
+  border-bottom: 1px solid #108bec;
+}
+
+.helpList {
+  padding: 7.5px 0;
+  background: #f4f4f4;
+}
+
+.helpList .inner {
+  padding: 7.5px 15px;
+}
+
+.helpList .inner .bg {
+  position: relative;
+  background: #fff;
+  padding: 20px 15px;
+}
+
+.helpList .inner .bg image {
+  width: 100px;
+}
+
+.helpList .inner .bg .right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 130px;
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+.helpList .inner .bg .right .title {
+  font-size: 14px;
+}
+
+.helpList .inner .bg .right .abstract {
+  font-size: 13px;
+  color: #999;
+  margin: 5px 0;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.helpList .inner .bg .right .addtime {
+  font-size: 13px;
+  color: #999;
+}
+
+.pageBotton {
+  margin-bottom: 20px;
+}

@@ -1,2 +1,57 @@
-<!--pages/help/index.wxml-->
-<text>pages/help/index.wxml</text>
+<!--pages/dingzhi/index.wxml-->
+
+
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
+<v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+  <view class='title'>{{bannerTitle}}</view>
+  <view class='inputGroup'>
+    <input class='keyword' placeholder="请输入你要查询的内容" value="{{keyword}}" bindinput="keywordChage"/>
+  </view>
+</view>
+
+<view class='btnList'>
+  <text class='{{categorysAction==item.id?"action":""}}' data-id="{{item.id}}" wx:for="{{categorys}}" wx:key="{{index}}" bindtap="categorysSwitch">{{item.categoryname}}</text>
+</view>
+
+<view class='helpList'>
+  <i-row>
+    <i-col span="24" i-class="col-class" wx:for="{{helpList}}" wx:key="{{index}}">
+      <view class='inner'>
+        <view class='bg'>
+          <image src="{{item.image}}" mode="widthFix" />
+          <view class='right'>
+            <view class='title'>{{item.title}}</view>
+            <view class='abstract'>{{item.abstract}}</view>
+            <view class='addtime'>{{item.addtime}}</view>
+          </view>
+        </view>
+      </view>
+    </i-col>
+
+  </i-row>
+</view>
+
+<view class='pageBotton'>
+  <i-page current="{{ nowPage }}" total="{{allpage}}" bind:change="handleChange">
+    <view slot="prev">
+      <i-icon type="return"></i-icon>
+      上一步
+    </view>
+    <view slot="next">
+      下一步
+      <i-icon type="enter"></i-icon>
+    </view>
+  </i-page>
+</view>
+
+
+
+
+
+
+<v-footer footer="{{footer}}">
+  <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+</v-footer>

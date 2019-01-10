@@ -1,3 +1,13 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "i-row": "../../dist/iview/row/index",
+    "i-col": "../../dist/iview/col/index",
+    "i-spin": "../../dist/iview/spin/index",
+    "i-avatar": "../../dist/iview/avatar/index",
+    "i-page": "../../dist/iview/page/index",
+    "i-button": "../../dist/iview/button/index",
+    "i-input": "../../dist/iview/input/index",
+    "v-footer": "../../components/footerItem/index",
+    "v-header": "../../components/headerItem/index"
+  }
 }
