@@ -18,7 +18,7 @@
 
 <view class='helpList'>
   <i-row>
-    <i-col span="24" i-class="col-class" wx:for="{{helpList}}" wx:key="{{index}}">
+    <i-col span="24" i-class="col-class" wx:for="{{helpList}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDesc">
       <view class='inner'>
         <view class='bg'>
           <image src="{{item.image}}" mode="widthFix" />

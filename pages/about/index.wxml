@@ -9,8 +9,8 @@
 
 <view class='list'>
   <view class='top'>
-    <view class='title-cn'>团队介绍</view>
-    <view class='title-en'>Team Introduction</view>
+    <view class='title-cn'>{{teamstitle.title}}</view>
+    <view class='title-en'>{{teamstitle.subhead}}</view>
   </view>
   <i-row>
     <i-col span="12" i-class="col-class" wx:for="{{teams}}" wx:key="{{index}}">
@@ -22,8 +22,8 @@
 
 <view class='list'>
   <view class='top'>
-    <view class='title-cn'>团队介绍</view>
-    <view class='title-en'>Team Introduction</view>
+    <view class='title-cn'>{{certstitle.title}}</view>
+    <view class='title-en'>{{certstitle.subhead}}</view>
   </view>
   <i-row>
     <i-col span="12" i-class="col-class" wx:for="{{certs}}" wx:key="{{index}}">

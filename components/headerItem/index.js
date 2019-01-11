@@ -98,10 +98,10 @@ Component({
           pg = '/pages/about/index'
           break;
         case 'contact':
-          pg = '/pages/contact/index' // 未完成
+          pg = '/pages/contact/index' 
           break;
         case 'help':
-          pg = '/pages/help/index' // 未完成
+          pg = '/pages/help/index' 
           break;
         default:
           break

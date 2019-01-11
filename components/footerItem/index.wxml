@@ -12,10 +12,19 @@
   <view class='footItem'>
     <i-icon type="coordinates" size="15" />Add：{{footer.site}}</view>
   <view class='shangbiao'>
-  {{footer.copyright.copyright}}  {{footer.copyright.records}}
+    {{footer.copyright.copyright}} {{footer.copyright.records}}
   </view>
   <view>
     <image src='{{footer.erweima}}' mode='widthFix' class='qrcode'></image>
   </view>
   <view class='tip'>扫一扫 关注我</view>
+</view>
+
+<view class='floatMenu'>
+  <view class='item'>
+    <image src='../../imgs/floatPhone.png' mode='widthFix' data-tel="{{footer.tel}}" bindtap='call'></image>
+  </view>
+  <view class='item'>
+    <image src='../../imgs/floatTop.png' mode='widthFix' bindtap='scrollTop'></image>
+  </view>
 </view>

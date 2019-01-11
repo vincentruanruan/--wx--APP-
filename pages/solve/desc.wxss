@@ -1,0 +1,133 @@
+/* pages/solve/index.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.banner {
+  position: relative;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.banner .title {
+  position: absolute;
+  top: 30%;
+  left: 20px;
+  width: 100%;
+  color: #fff;
+}
+
+.categorysBtns {
+  background: #fff;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 5px;
+}
+
+.categorysBtns text {
+  font-size: 15px;
+  padding: 7px 5px;
+  margin: 2px 3px;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+
+.categorysBtns text.action {
+  border-bottom: 1px solid #108bec;
+}
+
+.list {
+  padding: 20px 7.5px;
+  background: #f4f4f4;
+  /* text-align: center; */
+}
+
+.list .inner {
+  padding: 0 7.5px;
+  margin-bottom: 20px;
+}
+
+.list .inner .bg {
+  background: #fff;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.list .inner image {
+  width: 100%;
+}
+
+.list .inner .title {
+  color: #333;
+  font-size: 15px;
+  padding: 5px 10px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.list .inner .desc {
+  color: #999;
+  font-size: 13px;
+  padding: 0px 10px 0px 10px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.list .title{
+  padding-left: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.pageBotton {
+  background: #f4f4f4;
+  margin-bottom: 20px;
+}
+
+.article {
+  background: #fff;
+  margin-top: 15px;
+}
+
+.article .top {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.article .top .title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.article .top .datatime {
+  font-size: 14px;
+  color: #999;
+}
+
+.article .top .viewNum {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  font-size: 14px;
+  color: #999;
+}
+
+.article .contenr{
+  padding: 20px;
+}

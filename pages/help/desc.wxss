@@ -1,4 +1,4 @@
-/* pages/dingzhi/index.wxss */
+
 
 page {
   background: #f4f4f4;
@@ -33,12 +33,12 @@ page {
   background: #fff;
   font-size: 12px;
 }
-
-.banner .inputGroup keyword {
+.banner .inputGroup keyword{
   width: 120px;
   display: inline-block;
   background: #fff;
 }
+
 
 .btnList {
   background: #fff;
@@ -88,12 +88,6 @@ page {
 
 .helpList .inner .bg .right .title {
   font-size: 14px;
-  text-overflow: -o-ellipsis-lastline;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
 
 .helpList .inner .bg .right .abstract {
@@ -115,4 +109,42 @@ page {
 
 .pageBotton {
   margin-bottom: 20px;
+}
+
+.article {
+  background: #fff;
+  margin-top: 15px;
+}
+
+.article .top {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.article .top .title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.article .top .datatime {
+  font-size: 14px;
+  color: #999;
+}
+
+.article .top .viewNum {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  font-size: 14px;
+  color: #999;
+}
+
+.article .contenr{
+  padding: 20px;
+  font-size: 14px;
+}
+
+.pages{
+  text-align: center;
 }

@@ -20,7 +20,9 @@ Page({
 
     bannerImage: '',
     teams: [],
+    teamstitle:{},
     certs: [],
+    certstitle:{},
     contend:'',
 
     spinShow: true, // 加载等待
@@ -64,7 +66,9 @@ Page({
             bannerImage: dt.banner.about,
             contend: dt.banner.contend,
             teams: dt.teams,
+            teamstitle: dt.teamstitle,
             certs: dt.certs,
+            certstitle: dt.certstitle,
             rightMenu: dt.header.nav,
             footer: dt.footer,
             spinShow:false

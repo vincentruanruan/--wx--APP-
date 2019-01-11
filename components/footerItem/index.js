@@ -21,6 +21,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+    scrollTop: function () { // 滚动到顶部
+      // 控制滚动
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    },
+    call:function(e){
+      let tel = e.currentTarget.dataset.tel
+      wx.makePhoneCall({
+        phoneNumber: tel 
+      })
+    }
   }
 })

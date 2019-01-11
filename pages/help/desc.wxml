@@ -1,0 +1,45 @@
+
+
+
+<i-spin size="large" fix wx:if="{{spinShow}}"></i-spin>
+<v-header id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+
+<view class='banner'>
+  <image src="{{bannerImage}}" mode="widthFix" />
+  <view class='title'>{{bannerTitle}}</view>
+  <view class='inputGroup'>
+    <input class='keyword' placeholder="请输入你要查询的内容" value="{{keyword}}" bindconfirm="keywordChage" confirm-type="search" />
+  </view>
+</view>
+
+<view class='btnList'>
+  <text class='{{index==0?"action":""}}' data-id="{{item.id}}" wx:for="{{categorys}}" wx:key="{{index}}" bindtap="categorysSwitch">{{item.categoryname}}</text>
+</view>
+
+<view class='article'>
+  <view class='top'>
+    <view class='title'>{{info.title}}</view>
+    <view class='datatime'>{{info.addtime}}</view>
+    <view class='viewNum'>
+      <i-icon type="browse" size="20" />{{info.count}}</view>
+  </view>
+  <view class='contenr'>
+    <import src="../../dist/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+
+
+
+<view class='pages'>
+  <i-button bind:click="changeData" class='left' inline="true" data-id="{{prev.id}}" wx:if="{{prev.id}}" wx:key="{{index}}">上一篇：{{prev.title}}</i-button>
+  <i-button class='left' inline="true" wx:if="{{!prev.id}}" disabled>没有了</i-button>
+  <i-button bind:click="changeData" class='right' inline="true" data-id="{{next.id}}" wx:if="{{next.id}}">下一篇：{{next.title}}</i-button>
+  <i-button class='right' inline="true" wx:if="{{!next.id}}" disabled>没有了</i-button>
+</view>
+
+
+
+<v-footer footer="{{footer}}">
+  <text wx:for="{{footer.menu}}" wx:key="{{index}}" data-do="{{item.do}}" bindtap='footerTo'>{{item.title}}</text>
+</v-footer>

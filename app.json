@@ -7,10 +7,12 @@
     "pages/about/index",
     "pages/logs/logs",
     "pages/solve/index",
+    "pages/solve/desc",
     "pages/xiaochengxu/index",
     "pages/dingzhi/index",
     "pages/daili/index",
     "pages/contact/index",
+    "pages/help/desc",
     "pages/help/index"
   ],
   "window":{

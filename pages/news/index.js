@@ -127,7 +127,7 @@ Page({
 
   },
 
-  setNavTitle: function () {
+  setNavTitle: function() {
     wx.setNavigationBarTitle({
       title: this.data.navTitle,
     })
@@ -158,7 +158,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.getData()
   },
 
   /**

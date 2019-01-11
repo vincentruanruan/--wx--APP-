@@ -2,6 +2,8 @@
 
 const app = getApp()
 
+var WxParse = require('../../dist/wxParse/wxParse.js');
+
 Page({
 
   /**
@@ -18,14 +20,10 @@ Page({
     keyword: '',
 
     categorys: [],
-    categorysAction: 0,
-
-    helpList: [],
-
-    nowPage: 1,
-    nextPage: 0,
-    allpage: 0,
-
+    info: {},
+    prev: {},
+    next: {},
+    spinShow: true,
 
     rightMenu: [],
     navTitle: '',
@@ -33,54 +31,61 @@ Page({
     bannerTitle: '',
 
   },
-
   keywordChage: function(e) {
     this.setData({
       keyword: e.detail.value
     })
-    this.getData()
+
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+
+    if (prevPage.route == 'pages/help/index') {
+      prevPage.setData({
+        keyword: this.data.keyword
+      })
+      wx.navigateBack()
+    }
   },
   // 获取数据
-  getData: function() {
+  getData: function(id) {
     let that = this
     this.scrollTop()
+    this.setData({
+      spinShow: false,
+    })
     wx.request({
-      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=helpapi',
+      url: app.globalData.baseUrl + 'web/index.php?c=account&a=welcome&do=helpdetailapi',
       data: {
-        cid: this.data.categorysAction,
-        page: this.data.nowPage,
-        keyword: this.data.keyword,
+        id: id
       },
       success(res) {
         console.log(res)
         let dt = res.data.data
-        let parvious = that.data.nowPage - 1 < 1 ? 0 : that.data.nowPage - 1
-        let next = that.data.nowPage + 1 > dt.allpage ? 0 : that.data.nowPage + 1
+
         if (res.data.code == 200) {
 
           console.log(dt)
+
           that.setData({
 
             topBarLogo: dt.header.logo[1],
             logo: dt.header.logo[0],
             logoWhite: dt.header.logo[1],
-            rightMenu: dt.header.nav,
+
 
             bannerImage: dt.banner.help,
             bannerTitle: dt.banner.helptitle,
 
-            previousPage: parvious,
-            nextPage: next,
-            allpage: dt.allpage,
-
             categorys: dt.categorys,
-
-            helpList: dt.lists,
-
+            info: dt.info,
+            prev: dt.prev,
+            next: dt.next,
             footer: dt.footer,
-
+            rightMenu: dt.header.nav,
             navTitle: dt.title,
+            spinShow: false,
           })
+          WxParse.wxParse('article', 'html', that.data.info.content, that, 5);
           that.setNavTitle()
         }
       }
@@ -92,22 +97,21 @@ Page({
       scrollTop: 0
     })
   },
-  toDesc: function(e) {
-    let id = e.currentTarget.dataset.id
-    // console.log(id)
-    wx.navigateTo({
-      url: 'desc?id=' + id,
-    })
-  },
   categorysSwitch: function(e) { //类型切换
     let id = e.currentTarget.dataset.id
-    console.log(id)
-    this.setData({
-      categorysAction: id,
-      nowPage: 1,
-      keyword: ''
-    })
-    this.getData()
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+
+    if (prevPage.route == 'pages/help/index') { //如果是新闻页面进入的
+      prevPage.setData({
+        categorysAction: id
+      })
+      wx.navigateBack()
+    } else { // 不是新闻页面进入的
+      wx.redirectTo({
+        url: 'index?categorysAction=' + id,
+      })
+    }
     this.scrollTop()
   },
   setNavTitle: function() {
@@ -121,43 +125,17 @@ Page({
     this.selectComponent("#v-header").goto(todo)
 
   },
-
-  handleChange({ // 上一页下一页
-    detail
-  }) {
-    const type = detail.type;
-    if (type === 'next') {
-      console.log(this.data.nowPage)
-      this.setData({
-        nowPage: this.data.nextPage
-      });
-      this.getData()
-      this.scrollTop()
-    } else if (type === 'prev') {
-      console.log(this.data.nowPage && this.data.previousPage)
-      this.setData({
-        nowPage: this.data.previousPage
-      });
-      this.getData()
-      this.scrollTop()
-    }
+  changeData: function(e) {
+    let id = e.currentTarget.dataset.id
+    this.getData(id)
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.categorysAction) {
-      this.setData({
-        categorysAction: options.categorysAction
-      })
-    } 
-    if (options.keyword) {
-      this.setData({
-        keyword: options.keyword
-      })
-    }
-    this.getData()
+    this.getData(options.id)
   },
 
   /**
@@ -171,7 +149,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.getData()
+
   },
 
   /**

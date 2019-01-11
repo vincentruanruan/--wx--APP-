@@ -2,6 +2,7 @@
 
 <i-spin size="large"  wx:if="{{spinShow}}"></i-spin>
 <v-header  id="v-header" logo="{{topBarLogo}}" drop="{{drop}}" rightMenu="{{rightMenu}}" paddingBox="{{true}}" />
+
 <view class='banner'>
   <image src="{{bannerImage}}" mode="widthFix" />
 </view>

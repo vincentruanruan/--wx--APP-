@@ -10,14 +10,27 @@
 </view>
 
 <view class='categorysBtns'>
-  <text class='{{categoryAction==item.id?"action":""}}' wx:for="{{categorys}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='categoryChange'>{{item.categoryname}}</text>
+  <text class='{{index==0?"action":""}}' wx:for="{{categorys}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='categoryChange'>{{item.categoryname}}</text>
+</view>
+
+
+<view class='article'>
+  <view class='top'>
+    <view class='title'>{{info.title}}</view>
+    <view class='datatime'>{{info.addtime}}</view>
+    <view class='viewNum'><i-icon type="browse" size="20" />{{info.count}}</view>
+  </view>
+  <view class='contenr'>
+    <import src="../../dist/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
 </view>
 
 
 <view class='list'>
-
+  <view class='title'>相关案例</view>
   <i-row>
-    <i-col span="12" i-class="col-class" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDesc">
+    <i-col span="12" i-class="col-class" wx:for="{{referrals}}" wx:key="{{index}}" data-id="{{item.id}}">
       <view class='inner'>
         <view class='bg'>
           <image src='{{item.image}}' mode='widthFix'></image>
@@ -30,18 +43,7 @@
 
 </view>
 
-<view class='pageBotton'>
-  <i-page current="{{ nowPage }}" total="{{allpage}}" bind:change="handleChange">
-    <view slot="prev">
-      <i-icon type="return"></i-icon>
-      上一步
-    </view>
-    <view slot="next">
-      下一步
-      <i-icon type="enter"></i-icon>
-    </view>
-  </i-page>
-</view>
+
 
 
 

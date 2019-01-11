@@ -43,3 +43,23 @@
   margin-top: 10px;
   font-size: 12px;
 }
+
+.floatMenu {
+  position: fixed;
+  /* background: red; */
+  right: 10px;
+  top: 40%;
+  z-index: 2;
+}
+.floatMenu .item {
+  background: rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.floatMenu .item image{
+  width: 100%;
+}

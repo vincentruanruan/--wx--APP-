@@ -61,6 +61,13 @@ Page({
     }
   },
 
+  toDesc: function(e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: 'desc?id=' + id,
+    })
+  },
+
   // 获取数据
   getData: function() {
     let that = this
@@ -131,6 +138,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if (options.categoryAction) {
+      this.setData({
+        categoryAction: options.categoryAction
+      })
+    }
     this.getData()
   },
 
@@ -145,7 +157,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.getData()
   },
 
   /**
